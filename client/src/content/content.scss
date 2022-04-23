@@ -1,0 +1,47 @@
+.content {
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-color: #ffffff56;
+    background-image: url(../images/globe-network.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // opacity: 0.9;
+    display: flex;
+    justify-content: space-around;
+}
+
+.info {
+    height: 80%;
+    width: 35%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(#00000056, 0.7);
+    color: #fff;
+    border-radius: 15px;
+    
+    h2 {
+        text-align: center;
+    }
+}
+
+.socialMediaLinks {
+    padding: 0 25px;
+    ul {
+        margin-right: 75px;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    li:nth-child(2) {
+        margin: 20px 0;
+    }	
+     img {
+         height: 45px;
+         transition-property: height;
+         transition-duration: 1s;
+
+         &:hover {
+             height: 50px;
+         }
+     }
+}
