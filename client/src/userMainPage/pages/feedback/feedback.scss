@@ -1,11 +1,16 @@
 .feedback {
-    width: 96%;
+    // padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact {
+    width: 100%;
     height: 500px;
-    margin: 50px auto;
-    padding: 10px;
+    margin-bottom: 14px;
     display: flex;
     justify-content: space-between;
-    // border: 2px solid green;
 }
 
 .data-collaction, .infoWrapper {
@@ -13,12 +18,11 @@
     height: 100%;
     display: flex;
     flex-flow: column;
-    // border: 2px solid cadetblue;
 }
 
 .rating, .questions, .opinions, .contact-us {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     border: 1px solid grey;
     padding: 6px;
     display: flex;
@@ -46,10 +50,6 @@
     height: 100px;
 }
 
-.questions {
-    // height: 150px;
-}
-
 .opinions {
     margin-bottom: 0;
 }
@@ -70,4 +70,11 @@
         margin-top: 8px;
         border: 1px solid;
     }
+}
+
+.googleMap {
+    width: 100%;
+    height: 260px;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 9px -1px grey;
 }

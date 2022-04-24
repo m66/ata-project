@@ -1,0 +1,41 @@
+.tax-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .my-turnover, .low-field {
+        border: 1px solid grey;
+        box-shadow: 0px 0px 9px -1px grey;
+        padding: 14px;
+    }
+
+    .my-turnover {
+        margin-bottom: 14px;
+
+        tr:last-child {
+            background-color: red;
+            td {
+                color: white;
+            }
+        }
+    }
+
+    .download-pdf-btn {
+        height: 30px;
+        width: 150px;
+        border-color: transparent;
+        background: grey;
+        color: white;
+        margin-top: 14px;
+        font-size: 17px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: background-color 0.5s ease;
+        }
+    }
+}

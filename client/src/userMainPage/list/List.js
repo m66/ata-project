@@ -22,9 +22,9 @@ function List() {
                 <Link to='/order'><li>My orders</li></Link>
                 <Link to='/market'><li>Market</li></Link>
                 <Link to='/progress'><li>Progress</li></Link>
-                <Link to='new-partners'><li>Find new partners</li></Link>
-                <Link to='feedback'><li>Feedback</li></Link>
-                <Link to='settings'><li>Settings</li></Link>
+                <Link to='/tax-field'><li>Tax Field</li></Link>
+                <Link to='/feedback'><li>Feedback</li></Link>
+                <Link to='/settings'><li>Settings</li></Link>
             </ul>
         </div>
     )

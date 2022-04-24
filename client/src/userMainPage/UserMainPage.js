@@ -7,7 +7,7 @@ import CoWorkers from './pages/coWorkers/CoWorkers';
 import MyOrder from './pages/myOrders/MyOrder'
 import Market from './pages/market/Market';
 import Progress from './pages/progress/Progress';
-import NewPartners from './pages/newPartners/NewPartners';
+import TaxField from './pages/taxField/TaxField';
 import Feedback from './pages/feedback/Feedback'
 import Settings from './pages/settings/Settings';
 
@@ -22,7 +22,7 @@ function UserMainPage() {
                     <Route path='/order' element={< MyOrder/>} />
                     <Route path='/market' element={< Market/>} />
                     <Route path='/progress' element={< Progress/>} />
-                    <Route path='/new-partners' element={< NewPartners/>} />
+                    <Route path='/tax-field' element={<TaxField />} />
                     <Route path='/feedback' element={< Feedback/>} />
                     <Route path='/settings' element={< Settings/>} />
                     <Route path='/*' element={< Main/>} />

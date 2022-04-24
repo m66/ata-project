@@ -6,7 +6,7 @@
         border: 2px solid red;
         border-radius: 91px 91px 15px 15px;
         padding: 5px;
-        background: darkgrey;
+        background: #e7e7e7;
         
         img {
             width: 100%;
@@ -35,18 +35,24 @@
         }
 
         li {
-            width: 93%;
-            margin: 5px;
+            // width: 93%;
+            // margin: 5px;
+            margin-top: 5px;
             padding: 10px;
             font-size: 20px;
-            background: linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(161,95,135,.6) 0%, rgba(115,212,230,.6) 100%);
-            border: 1px solid;
-            border-radius: 0 10px;
-            box-shadow: 2px 5px;
+            // background: linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(161,95,135,.6) 0%, rgba(115,212,230,.6) 100%);
+            // border: 1px solid;
+            // border-radius: 0 10px;
+            border-radius: 5px;
+            // box-shadow: 2px 5px;
+            border: 1px solid grey;
+            box-shadow: 0px 0px 9px -1px grey;
             cursor: pointer;
 
             &:hover {
-                background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(161,95,135,1) 0%, rgba(115,212,230,1) 100%);
+                // background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(161,95,135,1) 0%, rgba(115,212,230,1) 100%);
+                background-color: #e7e7e7;
+                transition: background-color 0.5s ease;
             }
         }
     }
