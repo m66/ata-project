@@ -3,7 +3,7 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { encrypt, decrypt } = require('./EncryptionHandler');
+const { encrypt } = require('./EncryptionHandler');
 
 const db = mysql.createPool({
     host: 'localhost',
@@ -56,25 +56,32 @@ app.post('/register', (req, res) => {
 
 app.post('/login', (req, res) => {
     const {numberEmail, password} = req.body;
-    console.log(numberEmail)
+    // console.log(numberEmail)
+    
     const sqlInsert = "SELECT * FROM register WHERE numberEmail = ?";
-    db.query(sqlInsert, [ numberEmail], (err, result) => {
-        console.log(result)
+
+
+    db.query(sqlInsert, [ numberEmail ], (err, results) => {
+        // console.log(numberEmail, iv, password)
+        
+
+        console.log(results);
         // const iv = result[0].iv;
         // console.log(numberEmail + ' => ' + iv)
         // const pass = decrypt({password: password, iv: iv})
         // console.log(pass)
         if(err) {
             res.send({err: err})
-        }
-
-        if(result.length > 0) {
-            res.send(result);
-        } else {
-            res.send({message: 'Wrong userName/password combination'});
+        } else if(results.length > 0) {
+            const { iv, password: hashedPassword } = encrypt(password, results[0].iv);
+            if (hashedPassword === results[0].password) {
+                res.send(results);
+            } else {
+                res.send({ message: 'Wrong userName/password combination' });
+            }
         }
     })
-})
+    })
 
 app.get('/getPassword', (req, res) => {
     db.query('SELECT * FROM register', (err, result) => {

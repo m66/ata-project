@@ -38,7 +38,7 @@ const formValidation = {
         isTouch: false,
         errorMessage: null,
         value: ''
-    },
+    },  
     password: {
         isTouch: false,
         errorMessage: null,

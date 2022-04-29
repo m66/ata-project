@@ -1,8 +1,8 @@
 const crypto = require("crypto");
 const secret = "pppppppppppppppppppppppppppppppp";
 
-const encrypt = (password) => {
-  const iv = Buffer.from(crypto.randomBytes(16));
+const encrypt = (password, savedIv = null) => {
+  const iv = savedIv ? Buffer.from(savedIv, 'hex') : Buffer.from(crypto.randomBytes(16));
   const cipher = crypto.createCipheriv("aes-256-ctr", Buffer.from(secret), iv);
 
   const encryptedPassword = Buffer.concat([

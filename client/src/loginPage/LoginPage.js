@@ -24,10 +24,11 @@ function LoginPage() {
             numberEmail: numberEmail,
             password: password
         }).then((response) => {
-            if(response.data.message) {
+            if(response.status >= 300) {
                 setLoginStatus(response.data.message);
             } else {
-                setLoginStatus(response.data[0].numberEmail);
+
+                // setLoginStatus(response.data[0].numberEmail);
             }
         })
     }
