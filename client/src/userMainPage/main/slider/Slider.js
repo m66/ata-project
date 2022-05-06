@@ -29,8 +29,8 @@ function Slider() {
             {dataSlider.map((obj, index) => {
                 return (
                     <div 
-                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"} 
-                    key={obj.id}
+                        className={slideIndex === index + 1 ? "slide active-anim" : "slide"} 
+                        key={obj.id}
                     >
                         <img src={process.env.PUBLIC_URL + `../imgs/img${index + 1}.jpg`} />
                     <p>{obj.title}</p>

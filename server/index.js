@@ -37,45 +37,18 @@ app.post('/register', (req, res) => {
 })
 
 // LOGIN
-// app.post('/login', (req, res) => {
-//     const {numberEmail, password} = req.body;
-
-//     const sqlInsert = "SELECT * FROM register WHERE numberEmail = ? AND password = ?"
-//     db.query(sqlInsert, [ numberEmail, password], (err, result) => {
-//         if(err) {
-//             res.send({err: err})
-//         }
-
-//         if(result.length > 0) {
-//             res.send(result);
-//         } else {
-//             res.send({message: 'Wrong userName/password combination'});
-//         }
-//     })
-// })
-
 app.post('/login', (req, res) => {
-    const {numberEmail, password} = req.body;
-    // console.log(numberEmail)
-    
+    const {numberEmail, password} = req.body;    
     const sqlInsert = "SELECT * FROM register WHERE numberEmail = ?";
 
-
     db.query(sqlInsert, [ numberEmail ], (err, results) => {
-        // console.log(numberEmail, iv, password)
-        
-
-        console.log(results);
-        // const iv = result[0].iv;
-        // console.log(numberEmail + ' => ' + iv)
-        // const pass = decrypt({password: password, iv: iv})
-        // console.log(pass)
         if(err) {
             res.send({err: err})
         } else if(results.length > 0) {
             const { iv, password: hashedPassword } = encrypt(password, results[0].iv);
             if (hashedPassword === results[0].password) {
                 res.send(results);
+                // res.sendFile(path.resolve('./index.html'))
             } else {
                 res.send({ message: 'Wrong userName/password combination' });
             }
@@ -92,12 +65,6 @@ app.get('/getPassword', (req, res) => {
         }
     })
 })
-
-// app.post('/decryptPassword', (req, res) => {
-//     const {login, password, iv} = req.body;
-//     res.send(decrypt(password, iv));
-// })
-
 
 // ======= LOGIN END =====
 

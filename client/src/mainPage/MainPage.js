@@ -13,14 +13,14 @@ function MainPage() {
             <div>
                 <Header />
 
-                {/* <UserMainPage /> */}
+                <UserMainPage />
 
-                <Routes>
+                {/* <Routes>
                     <Route exact path='/' element={<Content />}/>
                     <Route path='/login-page' element={<LoginPage />} />
                     <Route path='/register-page' element={<RegisterPage />} />
                     <Route path='/*' element={<Content />} />
-                </Routes>
+                </Routes> */}
 
                 <Footer />
             </div>

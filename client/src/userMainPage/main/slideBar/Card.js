@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components"
 
-// const Card = ({ number }) => <div className="Card">{number}</div>
-
-// export default Card;
-
 export default styled.div`
 display: flex;
 justify-content: center;

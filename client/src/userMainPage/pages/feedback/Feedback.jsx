@@ -2,8 +2,6 @@ import './feedback.scss';
 import { FaStar } from 'react-icons/fa'
 import { useState } from 'react';
 
-// import { MapContainer } from './googleMaps/GoogleMaps';
-
 const colors = {
     orange: '#FFBA5A',
     grey: '#a9a9a9'
@@ -26,8 +24,6 @@ function Feedback() {
     const handleMouseLeave = () => {
         setHoverValue(undefined);
     }
-
-
 
     return (
         <div className='feedback'>
