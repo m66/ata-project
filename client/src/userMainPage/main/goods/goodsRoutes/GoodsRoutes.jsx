@@ -5,11 +5,12 @@ import Productes from '../productes/Productes';
 function GoodsRoutes() {
     return (
         <div>
-            <Routes>
+            <Productes />
+            {/* <Routes>
                 <Route path='/goods/my-goods' element={<Productes />} />
                 <Route path='/goods/cart' element={<Cart />} />
                 <Route path='/goods/*' element={<Productes />} />
-            </Routes>
+            </Routes> */}
         </div>
     );
 }

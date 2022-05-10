@@ -1,7 +1,5 @@
 import './header.scss';
 import logo from '../images/logo.png';
-// import dark from '../images/light-dark/dark.png';
-// import light from '../images/light-dark/light.png';
 import logoFlagAM from '../images/armenia.png';
 import logoFlagRS from '../images/russia.png';
 import { Link } from 'react-router-dom';

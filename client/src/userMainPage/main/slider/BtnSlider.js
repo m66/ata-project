@@ -4,7 +4,6 @@ import rightArrow from './icons/right-arrow.png';
 import leftArrow from './icons/left-arrow.png';
 
 function BtnSlider({direction, moveSlider}) {
-    // console.log(direction, moveSlider)
     return ( 
         <div>
             <button

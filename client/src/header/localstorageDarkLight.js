@@ -1,5 +1,3 @@
-// import { $MODE_BTN, $BODY } from '../elements';
-
 export default function changeMode(mode) {
 
     const $MODE_BTN = document.getElementById('mode-button');

@@ -1,6 +1,4 @@
 .goods-header {
-    height: 45px;
-    width: 100%;
     padding: 0 10px;
     background: black;
     color: white;
@@ -14,21 +12,35 @@
     }
 
     &-link {
-        display: flex;
-
-        ul li {
+        ul {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+        
+            li {
             list-style: none;
-            font-size: 20px;
+            margin-right: 10px;
 
-            a{
-                text-decoration: none;
-                color: white;
+                a{
+                    text-decoration: none;
+                    color: white;
 
-                &:hover {
-                    color: #fffc3c;
+                    &:hover {
+                        color: #fffc3c;
+                    }
                 }
             }
         }
-    }
 }
+    }
 
+
+
+.modalDiv {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    background-color: #fffc3c;
+    top: 50px;
+    left: 50px;
+}

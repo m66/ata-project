@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './registerPage.scss';
 import { 
-    // nameVlaidation,
-    // phoneValidation,
     mailValidation,
     isRequier,
     minLength3,
     maxLength15,
-    // passwordValidation
 } from './validation';
 
 
@@ -38,7 +35,7 @@ const formValidation = {
         isTouch: false,
         errorMessage: null,
         value: ''
-    },
+    },  
     password: {
         isTouch: false,
         errorMessage: null,

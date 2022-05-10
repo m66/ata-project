@@ -8,15 +8,6 @@ function LoginPage() {
     const [password, setPassword] = useState('');
 
     const [loginStatus, setLoginStatus] = useState('');
-    const [passwordList, setPasswordList] = useState([])
-
-    // useEffect(() => {
-    //     Axios
-    //         .get('http://localhost:3001/getPassword')
-    //         .then((response) => {
-    //             setPasswordList(response.data)
-    //         })
-    // }, [])
 
     // ========= LOGIN =========
     const login = () => {
@@ -24,23 +15,14 @@ function LoginPage() {
             numberEmail: numberEmail,
             password: password
         }).then((response) => {
-            if(response.data.message) {
+
+            if(response.status >= 300) {
                 setLoginStatus(response.data.message);
             } else {
-                setLoginStatus(response.data[0].numberEmail);
+                console.log(response)
             }
         })
     }
-
-    // const decryptPassword = (encryption) => {
-    //     Axios.post('http://localhost:3001/decryptPassword', {
-    //         // login: numberEmail,
-    //         password: encryption.password,
-    //         iv: encryption.iv
-    //     }).then((response) => {
-    //         console.log(response.data)
-    //     })
-    // }
 
     // ========= LOGIN END =========
     return (
@@ -69,20 +51,11 @@ function LoginPage() {
                     </div>
                     <div className='pass'>Forgot Password?</div>
                     <button id='login' onClick={login}>Login</button>
-                    {/* <button id='login' onClick={() => {
-                        decryptPassword({
-                            nu: password,
-                            iv: val.iv
-                        })
-                    }}>Login</button> */}
                     <div className='signup_link'>
                         Nota member? <a href='#'>Signup</a>
                     </div>
                 </form>
             </div>
-            <div>{passwordList.map((val) => {
-                return <h1>{val.password}</h1>
-            })}</div>
         </div>
     )
 }
