@@ -6,7 +6,7 @@ import {
     isRequier,
     minLength3,
     maxLength15,
-} from './validation';
+} from '../helpers/validation';
 
 
 // ------ VALIDATION ------

@@ -1,6 +1,23 @@
 .list {
     width: 270px;
     padding: 70px 5px;
+    position: relative;
+    overflow: hidden;
+
+    .close-btn, .open-btn {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        padding: 0 5px;
+        background: transparent;
+        font-size: 25px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+
+        &:hover {
+            color: #5337dc;
+        }
+    }
 
     .user-info {
         border: 2px solid red;
@@ -48,4 +65,32 @@
             }
         }
     }
+}
+
+.active {
+    color: #5337dc;
+    background-color: rgb(194, 191, 191);
+    box-shadow: 0px 0px 5px 3px grey !important;
+}
+
+.close {
+    margin-left: -190px;
+    transition: 0.6s;
+}
+
+.open {
+    margin-left: 0;
+    transition: 0.6s;
+}
+
+.open-btn {
+    display: none;
+}
+
+.close-icon {
+    display: none;
+}
+
+.open-icon {
+    display: block;
 }

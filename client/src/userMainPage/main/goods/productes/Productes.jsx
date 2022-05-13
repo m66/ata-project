@@ -4,9 +4,6 @@ import './productes.scss';
 import data from '../Data/Data'
 
 function Productes() {
-
-
-
     return (
         <div>
             <CardGroup>
