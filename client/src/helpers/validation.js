@@ -29,3 +29,9 @@ export const passwordValidation = (input) => {
 
     return regex.test(input) ? undefined : 'Password must be strong!';
 }
+
+export const  priceValidate = (input) => {
+    const regex = /^(\d*([.,](?=\d{3}))?\d+)+((?!\2)[.,]\d\d)?$/;
+
+    return regex.test(input) ? undefined : 'Must be correct for price!';
+}

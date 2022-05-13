@@ -28,7 +28,7 @@ const data = {
             id: 5,
             name: 'Good5',
             price: '599',
-            image: '5.jpg'
+            // image: '5.jpg'
         },
     ]
 }
