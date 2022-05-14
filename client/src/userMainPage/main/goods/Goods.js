@@ -1,14 +1,23 @@
 import './goods.scss';
-import data from './Data/Data'
 import HeaderGoodsField from './headerGoodsField/HeaderGoodsField';
 import GoodsRoutes from './goodsRoutes/GoodsRoutes'
+import { useEffect, useState } from 'react';
+import { BACKEND_URL } from '../../../consts';
+
 function Goods() {
-    const { productItems } = data;
-  
+
+    const [productes, setProductes] = useState([]);
+    
+    useEffect(() => {
+        fetch(`${BACKEND_URL}/task`)
+            .then(response => response.json())
+            .then(data => setProductes(data))
+    }, [])
+
     return (
         <div className='goods'>
-            <HeaderGoodsField />
-            <GoodsRoutes />
+            <HeaderGoodsField setProductes={setProductes}/>
+            <GoodsRoutes productes={productes}/>
         </div>
     )
 }

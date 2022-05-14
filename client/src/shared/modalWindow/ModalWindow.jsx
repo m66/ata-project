@@ -16,9 +16,9 @@ import {
   maxLength15,
   priceValidate,
 } from "../../helpers/validation";
+import { BACKEND_URL } from '../../consts/index';
 
-
-function ModalWindow({ modal, toggle }) {
+function ModalWindow({ modal, toggle, setProductes }) {
   const [inputsData, setInputsData] = useState({
     productName: {
       value: "",
@@ -39,17 +39,40 @@ function ModalWindow({ modal, toggle }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    const {
+      productName: {value: productName},
+      price: {value: price},
+      productDescription: {value: productDescription}
+    } = inputsData;
+
+    const formData = {
+      title: productName,
+      description: productDescription
+    }
+
+    fetch(`${BACKEND_URL}/task`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => setProductes((prev) => {
+      return [...prev, data];
+    }))
+
+    toggle();
   };
 
   const handleChange = (e) => {
-    //   debugger
     const { value, name } = e.target;
     const { validations } = inputsData[name];
     let error;
 
     for(let i = 0; i < validations.length; i++) {
         const validation = validations[i];
-        console.log(validation)
         const errorMessage = validation(value);
 
         if(errorMessage) {

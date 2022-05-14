@@ -22,12 +22,10 @@ const SortSelect = () => {
   );
 };
 
-function HeaderGoodsField() {
+function HeaderGoodsField({setProductes}) {
   const [modal, setModal] = useState(false);
-  console.log(modal);
   const toggle = () => {
     setModal(!modal);
-    console.log(modal);
   };
 
   return (
@@ -54,7 +52,7 @@ function HeaderGoodsField() {
             <Button color="danger" onClick={toggle}>
               +
             </Button>
-            <ModalWindow modal={modal} toggle={toggle}/>
+            <ModalWindow modal={modal} toggle={toggle} setProductes={setProductes}/>
           </li>
           <li>
             <Link to="/goods/cart" className="cart">
